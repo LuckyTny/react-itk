@@ -1,0 +1,11 @@
+main {
+    grid-area: m;
+  }
+
+main img {
+    width: 600px;
+}
+
+.item {
+    color: brown;
+}
