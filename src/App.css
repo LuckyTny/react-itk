@@ -3,9 +3,15 @@
   margin: 0 auto;
   grid-template-areas: 
   "h h"
-  "n m";
+  "n c";
   grid-template-rows: 60px 1fr;
   grid-template-columns: 2fr 10fr;
   grid-gap: 10px;
   width: 90%;
+}
+
+.content-wrapper {
+  grid-area: c;
+  
+  background-color: bisque;
 }
