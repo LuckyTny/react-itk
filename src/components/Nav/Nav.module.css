@@ -6,8 +6,13 @@ nav {
 .item {
   font-size: 1.5rem;
   padding: .75rem 1rem;
+  
 }
 
-.item.active {
-  background-color: cornflowerblue;
+.item a.active {
+  color: black;
+}
+
+.item a {
+  text-decoration: none;
 }
