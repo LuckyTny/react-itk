@@ -1,4 +1,4 @@
-
+import {rerenderEntireTree} from '../render'
 let state = {
 
     dashboardPage: {
@@ -26,6 +26,13 @@ let state = {
             {id: 2321, name:'Natasha'},]
         
     }
+}
+
+export let addPost = (postMessage) => {
+  debugger;
+  let newPost = {id: 4, post: postMessage, likesCount: 0};
+  state.dashboardPage.posts.push(newPost);
+  rerenderEntireTree(state)
 }
 
 export default state;

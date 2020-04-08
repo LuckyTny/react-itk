@@ -10,3 +10,17 @@
 .messages {
     padding: 3rem;
 }
+
+.messageArea {
+    width: 600px;
+    height: 180px;
+    margin: .5rem 1rem;
+    
+}
+
+.sendButton{
+    width: 120px;
+    height: 60px;
+    margin: .5rem 1rem;
+    
+}
