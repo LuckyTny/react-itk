@@ -6,7 +6,7 @@ let state = {
             {id: 1, post: 'Whats UP!?     @#$%', likesCount: 24},
             {id: 2, post: 'Thats my first post here...', likesCount: 22},
             {id: 3, post: 'To 2010 form 1092', likesCount: 25},
-          ],
+          ], newPostText: 'Whats on your mind?'
     },
 
     dialogsPage: {
@@ -29,10 +29,15 @@ let state = {
 }
 
 export let addPost = (postMessage) => {
-  debugger;
   let newPost = {id: 4, post: postMessage, likesCount: 0};
   state.dashboardPage.posts.push(newPost);
   rerenderEntireTree(state)
 }
+
+export let updatePostText = (newText) => {
+  state.dashboardPage.newPostText = newText;
+  rerenderEntireTree(state);
+}
+
 
 export default state;

@@ -8,7 +8,13 @@ const Dashboard = (props) => {
     return(
       <main>
         <ProfileInfo />
-        <MyPosts posts={props.state.posts} addPost={props.addPost}/>
+        <MyPosts 
+          posts={props.dashboardPage.posts}
+          addPost={props.addPost}
+          updatePostText={props.updatePostText}
+          newPostText={props.dashboardPage.newPostText}
+          
+          />
       </main>
     )
 }

@@ -13,13 +13,16 @@ import Settings from './components/Settings/Settings'
 
 const App = (props) => {
   return (
+    
     <BrowserRouter>
     <div className='wrapper'>
       <Header />
       <Nav />
       <div className='content-wrapper'>
-      <Route path='/profile' render={ () => <Dashboard state={props.state.dashboardPage} 
-                                                       addPost={props.addPost}/>}/>
+      <Route path='/profile' render={ () => <Dashboard dashboardPage={props.state.dashboardPage} 
+                                                       addPost={props.addPost}
+                                                       updatePostText={props.updatePostText}
+                                                       />}/>
       <Route path='/dialogs' render={ () => <Dialogs state={props.state.dialogsPage} />}/>
       <Route path='/news' render={ () => <News />}/>
       <Route path='/music' render={ () => <Music />}/>
