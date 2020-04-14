@@ -10,11 +10,9 @@ const Dashboard = (props) => {
         <ProfileInfo />
         <MyPosts 
           posts={props.dashboardPage.posts}
-          addPost={props.addPost}
-          updatePostText={props.updatePostText}
+          dispatch={props.dispatch}
           newPostText={props.dashboardPage.newPostText}
-          
-          />
+         />
       </main>
     )
 }
