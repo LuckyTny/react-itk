@@ -28,15 +28,18 @@ let store = {
           }
         },
 
+  _callSubscriber() {
+    console.log('State has been changed');
+  },
+  
   getState() {
     return this._state;
   },
   
-  _callSubscriber() {
-    console.log('State has been changed');
-  },
+ 
 
   addPost() {
+    
     let newPost = {id: 4, post: this._state.dashboardPage.newPostText, likesCount: 0};
     this._state.dashboardPage.posts.push(newPost);
     this._state.dashboardPage.newPostText='';
@@ -44,13 +47,14 @@ let store = {
   },
 
   updatePostText(newText) {
+    debugger;
     this._state.dashboardPage.newPostText = newText;
     this._callSubscriber(this._state);
   },
 
   subscribe(observer) {
     this._callSubscriber = observer
-  }
+  },
 
 
 
