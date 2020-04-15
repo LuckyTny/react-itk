@@ -1,5 +1,10 @@
+import dashboardReducer from './dashboardReducer'
+import dialogReducer from './dialogReducer'
+import navbarReducer from './navbarReducer'
+
 const UPDATE_NEW_POST_TEXT ='UPDATE-NEW-POST-TEXT'
 const ADD_POST = 'ADD_POST'
+
 const UPDATE_NEW_MESSAGE_BODY = 'UPDATE_NEW_MESSAGE_BODY'
 const SEND_MESSAGE = 'SEND_MESSAGE'
 
@@ -34,7 +39,10 @@ let store = {
       newMessageBody: ""
 
       
-      }
+      },
+    navbar: {
+
+      },
     },
 
   _callSubscriber() {
@@ -50,23 +58,11 @@ let store = {
   },
 
   dispatch(action) {
-    if (action.type === ADD_POST) {
-        let newPost = {id: 4, post: this._state.dashboardPage.newPostText, likesCount: 0};
-        this._state.dashboardPage.posts.push(newPost);
-        this._state.dashboardPage.newPostText='';
-        this._callSubscriber(this._state);
-    } else if (action.type === UPDATE_NEW_POST_TEXT) { 
-        this._state.dashboardPage.newPostText = action.newText;
-        this._callSubscriber(this._state);
-    } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
-        this._state.dialogsPage.newMessageBody = action.body
-        this._callSubscriber(this._state);
-    } else if (action.type === SEND_MESSAGE) {
-        let body = this._state.dialogsPage.newMessageBody
-        this._state.dialogsPage.newMessageBody = ''
-        this._state.dialogsPage.messages.push({id: 6, message: body})
-        this._callSubscriber(this._state);
-    }
+
+    this._state.dashboardPage = dashboardReducer(this._state.dashboardPage, action);
+    this._state.dialogsPage = dialogReducer(this._state.dialogsPage, action);
+    this._state.navbar = navbarReducer(this._state.navbar, action);
+    this._callSubscriber(this._state);
 
   }
 

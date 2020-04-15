@@ -5,6 +5,7 @@ import ProfileInfo from './ProfileInfo/ProfileInfo';
 
 
 const Dashboard = (props) => {
+  debugger;
     return(
       <main>
         <ProfileInfo />
