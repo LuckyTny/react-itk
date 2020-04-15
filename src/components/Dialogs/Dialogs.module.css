@@ -14,13 +14,13 @@
 .messageArea {
     width: 600px;
     height: 180px;
-    margin: .5rem 1rem;
+    margin: 1rem 0;
     
 }
 
 .sendButton{
     width: 120px;
     height: 60px;
-    margin: .5rem 1rem;
+    margin: 1rem 0;
     
 }
