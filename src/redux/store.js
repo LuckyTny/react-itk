@@ -2,22 +2,10 @@ import dashboardReducer from './dashboardReducer'
 import dialogReducer from './dialogReducer'
 import navbarReducer from './navbarReducer'
 
-const UPDATE_NEW_POST_TEXT ='UPDATE-NEW-POST-TEXT'
-const ADD_POST = 'ADD_POST'
-
-const UPDATE_NEW_MESSAGE_BODY = 'UPDATE_NEW_MESSAGE_BODY'
-const SEND_MESSAGE = 'SEND_MESSAGE'
-
 let store = {
   _state: {
 
-    dashboardPage: {
-        posts: [
-            {id: 1, post: 'Whats UP!?     @#$%', likesCount: 24},
-            {id: 2, post: 'Thats my first post here...', likesCount: 22},
-            {id: 3, post: 'To 2010 form 1092', likesCount: 25},
-          ], newPostText: 'Whats on your mind?'
-    },
+    
 
     dialogsPage: {
       users: [
@@ -67,24 +55,6 @@ let store = {
   }
 
 }
-
-export const addPostActionCreator = () => ({ type: ADD_POST })
-  
-export const updateNewPostTextActionCreator = (text) => {
-  return { 
-    type: UPDATE_NEW_POST_TEXT, 
-    newText: text 
-  }
-}
-
-export const sendMessageCreator = () => ({
-  type: SEND_MESSAGE
-})
-
-export const updateNewMessageBodyCreator = (body) => ({
-  type: UPDATE_NEW_MESSAGE_BODY,
-  body: body
-})
 
 export default store;
 window.store = store;

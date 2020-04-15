@@ -3,8 +3,7 @@ import style from './Dialogs.module.css'
 
 import DialogItem from './DialogItem/DialogItem.js'
 import Message from './Message/Message.js'
-import { updateNewMessageBodyCreator } from '../../redux/state'
-import { sendMessageCreator } from '../../redux/state'
+import { sendMessageCreator ,updateNewMessageBodyCreator } from '../../redux/dialogReducer'
 
 const Dialogs = (props) => {
 debugger;

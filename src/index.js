@@ -1,4 +1,4 @@
-import store from './redux/state';
+import store from './redux/reduxStore';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 import React from 'react';
