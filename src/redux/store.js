@@ -5,7 +5,14 @@ import navbarReducer from './navbarReducer'
 let store = {
   _state: {
 
-    
+    dashboardPage: {
+        posts: [
+            {id: 1, post: 'Whats UP!?     @#$%', likesCount: 24},
+            {id: 2, post: 'Thats my first post here...', likesCount: 22},
+            {id: 3, post: 'To 2010 form 1092', likesCount: 25},
+          ], 
+        newPostText: 'Whats on your mind?'
+    },
 
     dialogsPage: {
       users: [

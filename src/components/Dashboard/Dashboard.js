@@ -1,7 +1,8 @@
 import React from 'react';
 import style from './Dashboard.module.css';
-import MyPosts from './MyPosts/MyPosts';
+
 import ProfileInfo from './ProfileInfo/ProfileInfo';
+import MyPostsContainer from './MyPosts/MyPostsContainer';
 
 
 const Dashboard = (props) => {
@@ -9,10 +10,10 @@ const Dashboard = (props) => {
     return(
       <main>
         <ProfileInfo />
-        <MyPosts 
-          posts={props.dashboardPage.posts}
-          dispatch={props.dispatch}
-          newPostText={props.dashboardPage.newPostText}
+        <MyPostsContainer store={props.store}
+          // posts={props.dashboardPage.posts}
+          // dispatch={props.dispatch}
+          // newPostText={props.dashboardPage.newPostText}
          />
       </main>
     )
