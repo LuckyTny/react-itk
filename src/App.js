@@ -20,8 +20,8 @@ const App = (props) => {
       <Nav />
       <div className='content-wrapper'>
         
-      <Route path='/profile' render={ () => <Dashboard store={ props.store } />}/>
-      <Route path='/dialogs' render={ () => <DialogsContainer store={ props.store } />}/>
+      <Route path='/profile' render={ () => <Dashboard />}/>
+      <Route path='/dialogs' render={ () => <DialogsContainer />}/>
       <Route path='/news' render={ () => <News />}/>
       <Route path='/music' render={ () => <Music />}/>
       <Route path='/settings' render={ () => <Settings />}/>

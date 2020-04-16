@@ -10,11 +10,7 @@ const Dashboard = (props) => {
     return(
       <main>
         <ProfileInfo />
-        <MyPostsContainer store={props.store}
-          // posts={props.dashboardPage.posts}
-          // dispatch={props.dispatch}
-          // newPostText={props.dashboardPage.newPostText}
-         />
+        <MyPostsContainer />
       </main>
     )
 }
