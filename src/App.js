@@ -1,36 +1,31 @@
 import React from 'react';
 import './App.css';
-import {Route, BrowserRouter} from 'react-router-dom';
+import {Route, } from 'react-router-dom';
 
 import Header from './components/Header/Header';
 import Nav from './components/Nav/Nav';
-import Dashboard from './components/Dashboard/Dashboard';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings'
 import UsersContainer from './components/Users/UsersContainer'
+import DashboardContainer from './components/Dashboard/DashboardContainer'
 
-
-
-const App = (props) => {
+const App = () => {
   return (
-    
-    <BrowserRouter>
-    <div className='wrapper'>
-      <Header />
-      <Nav />
-      <div className='content-wrapper'>
         
-      <Route path='/profile' render={ () => <Dashboard />}/>
+  <div className='wrapper'>
+    <Header />
+    <Nav />
+    <div className='content-wrapper'>
+      <Route path='/profile/:userId?' render={ () => <DashboardContainer />}/>
       <Route path='/dialogs' render={ () => <DialogsContainer />}/>
       <Route path='/news' render={ () => <News />}/>
       <Route path='/users' render={ () => <UsersContainer />}/>
       <Route path='/music' render={ () => <Music />}/>
       <Route path='/settings' render={ () => <Settings />}/>
-      </div>
     </div>
-    </BrowserRouter>
+  </div>
   );
 }
 

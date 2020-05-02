@@ -1,6 +1,7 @@
 nav {
     grid-area: n;
-    background-color: aquamarine;
+   
+    box-shadow: -5px 5px 19px 2px rgba(0,0,0,0.43);
   }
 
 .item {
