@@ -1,9 +1,13 @@
 header {
     grid-area: h;
-    
+    display: flex;
+    justify-content: space-between;
   }
 
 img {
     width: 240px;
     padding-top: 5px;
   }
+.loginBlock {
+padding: 1rem;
+}
