@@ -63,7 +63,9 @@ export const toggleIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHNIG, isFe
 export const getUsers = (currentPage, pageSize) => {
     return (dispatch) => {
     dispatch(toggleIsFetching(true))
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${currentPage}&count=${pageSize}`).then( response => {
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${currentPage}&count=${pageSize}`, {
+            withCredentials: true
+        }).then( response => {
         dispatch(toggleIsFetching(false))
         dispatch(setUsers(response.data.items))
         dispatch(setTotalUsersCount(response.data.totalCount))
