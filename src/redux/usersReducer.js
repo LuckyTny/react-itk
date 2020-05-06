@@ -1,3 +1,5 @@
+import * as axios from 'axios'
+
 const FOLLOW ='FOLLOW'
 const UNFOLLOW = 'UNFOLLOW'
 const SET_USERS = 'SET_USERS'
@@ -57,5 +59,16 @@ export const setUsers = (users) => ({type: SET_USERS, users})
 export const setCurrentPage = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage})
 export const setTotalUsersCount = (totalUsersCount) => ({type: SET_TOTAL_USERS_COUNT, totalUsersCount})
 export const toggleIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHNIG, isFetching})
+
+export const getUsersThunkCreator = (currentPage, pageSize) => {
+    return (dispatch) => {
+    dispatch(toggleIsFetching(true))
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${currentPage}&count=${pageSize}`).then( response => {
+        dispatch(toggleIsFetching(false))
+        dispatch(setUsers(response.data.items))
+        dispatch(setTotalUsersCount(response.data.totalCount))
+        })
+    }
+} 
 
 export default usersReducer
