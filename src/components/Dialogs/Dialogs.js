@@ -1,10 +1,8 @@
 import React from 'react';
 import style from './Dialogs.module.css'
-import {Redirect} from 'react-router-dom'
 
 import DialogItem from './DialogItem/DialogItem.js'
 import Message from './Message/Message.js'
-import { sendMessageCreator ,updateNewMessageBodyCreator } from '../../redux/dialogReducer'
 
 const Dialogs = (props) => {
 
@@ -13,7 +11,6 @@ let state = props.dialogsPage;
 let dialogElements = state.users.map( d => <DialogItem name={d.name} key={d.id} id={d.id} /> );
 let messagesElements = state.messages.map( m => <Message message={m.message} key={m.id} />);
 let newMessageBody = state.newMessageBody;
-
 
 let onSendMessage = () => {
   props.sendMessage()
@@ -25,7 +22,6 @@ let onNewMessageChange = (e) => {
   props.updateNewMessageBody(body)
 }
 
-if(props.isAuth === false) return <Redirect to = {"/Login"}></Redirect>
 
 return(
   <div className={style.dialogs}>
