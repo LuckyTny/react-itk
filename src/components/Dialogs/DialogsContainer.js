@@ -27,3 +27,4 @@ export default compose(
   connect(mapStateToProps, mapDispatchToProps),
   AuthRedirect 
 )(Dialogs);
+

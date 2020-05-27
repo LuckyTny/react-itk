@@ -23,6 +23,7 @@ let onNewMessageChange = (e) => {
 }
 
 
+
 return(
   <div className={style.dialogs}>
       <div className={style.dialogItem}>
